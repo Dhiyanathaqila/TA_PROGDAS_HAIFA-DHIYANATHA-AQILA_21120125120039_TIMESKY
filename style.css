@@ -1,0 +1,137 @@
+:root{
+    --bg1:#c8b8ff; /* Ini akan diubah oleh JS */
+    --bg2:#aed7ff; /* Ini akan diubah oleh JS */
+    --accent:#8a4fff; /* Warna Ungu Accent statis */
+    --card:#fff; /* Warna Card statis (Putih) */
+    --muted:#666;
+}
+body{
+    font-family:Poppins,sans-serif; 
+    margin:0;
+    /* Body menggunakan gradient dari variabel yang akan diubah */
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    /* Warna teks body statis (Gelap/Hitam) */
+    color:#2b2640; 
+}
+
+.card{
+    background:var(--card); 
+}
+.btn{
+    background:var(--accent); /* Tetap ungu */
+    color:#fff; /* Teks tombol tetap putih */
+    /* ... */
+}
+.container{
+    max-width:900px;
+    margin:25px auto;
+    padding:0 16px;
+}
+.card{
+    background:var(--card);
+    padding:18px;
+    border-radius:14px;
+    margin-top:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+.live-row{
+    display:flex;
+    gap:18px;
+    justify-content:space-between;
+    align-items:center;
+}
+.clock-large{
+    font-size:30px;
+    font-weight:700
+}
+.map-box img{
+    width:300px;
+    border-radius:10px
+}
+
+.form-grid{
+    display:grid;
+    gap:12px;
+    grid-template-columns:repeat(2,1fr);
+}
+.field{
+    display:flex;
+    flex-direction:column;
+}
+.field.full{
+    grid-column:span 2
+}
+
+input,select{
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    background:#fbf8ff;
+    font-size:15px;
+}
+.btn{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+}
+.btn:hover{
+    opacity:.92
+}
+.danger{
+    background:#e74c3c
+}
+
+.output{
+    margin-top:12px;
+    background:#fbf8ff;
+    padding:12px;
+    border-left:4px solid var(--accent);
+    border-radius:8px;
+    white-space:pre-line;
+}
+
+.mini-calendar{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px
+}
+.mini-calendar th{
+    background:var(--accent);
+    color:#fff;
+    padding:8px;
+}
+.mini-calendar td{
+    padding:10px;
+    text-align:center;
+    border:1px solid #eee;
+}
+.today{
+    background:#f0dcff !important;
+    font-weight:700;
+    color:#4b2e83;
+}
+
+.history-box{
+    max-height:220px;
+    overflow:auto;
+    background:#fff;
+    padding:12px;
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.history-box li{
+    margin-bottom:8px
+}
+
+@media(max-width:780px){
+    .live-row{
+        flex-direction:column
+    }
+    .form-grid{
+        grid-template-columns:1fr
+    }
+}
